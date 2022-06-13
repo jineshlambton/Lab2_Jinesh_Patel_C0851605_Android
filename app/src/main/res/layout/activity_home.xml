@@ -5,16 +5,85 @@
     tools:context=".Home">
 
     <LinearLayout
+        android:id="@+id/mainButtons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"
-            android:textSize="20dp"
-            >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
-        </TextView>
+        <LinearLayout
+            android:id="@+id/item1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnInsert"
+                android:text="INSERT"
+                android:layout_weight="1"
+                android:textColor="#FFF"
+                android:background="@color/cardview_dark_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:background="#fff"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+            <Button
+                android:id="@+id/btnUpdate"
+                android:text="UPDATE"
+                android:textColor="#FFF"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <View
+                android:background="#fff"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+        <View
+            android:background="#fff"
+            android:layout_width="2dp"
+            android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/item2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnDelete"
+            android:text="DELETE"
+            android:textColor="#FFF"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:background="#fff"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btnRefresh"
+            android:text="Refresh"
+            android:textColor="#FFF"
+            android:layout_weight="1"
+            android:background="@color/cardview_dark_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tvAllData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mainButtons"
+        android:padding="10dp"
+        android:textColor="#000" />
 
 </RelativeLayout>
