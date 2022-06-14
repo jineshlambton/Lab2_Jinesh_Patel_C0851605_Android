@@ -103,4 +103,10 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
     }
 
+    public int getTotalCount(){
+        String query="SELECT * from "+TABLE_NAME;
+        SQLiteDatabase sqLiteDatabase=this.getReadableDatabase();
+        Cursor cursor=sqLiteDatabase.rawQuery(query,null);
+        return cursor.getCount();
+    }
 }

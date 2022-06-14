@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,9 +45,27 @@ public class Home extends AppCompatActivity {
         delete = findViewById(R.id.btnDelete);
 
         tvAllData=findViewById(R.id.tvAllData);
+        tvAllData.setMovementMethod(new ScrollingMovementMethod());
 
         setUpButtons();
+        if (dbManager.getTotalCount() < 8) {
+            addDefaultData();
+        }
         btnRefreshClick();
+    }
+
+    void addDefaultData() {
+        for (int i = 0; i < 10; i++) {
+            Product productModel =new Product();
+            String strI =  String.valueOf(i);
+            productModel.setproduct_id("Id "+strI);
+            productModel.setProduct_name("Product name is "+strI);
+            productModel.setProduct_description("Product Description is "+strI);
+            productModel.setProduct_price("Product price is "+strI);
+            Date date=new Date();
+            productModel.setCreated_at(""+date.getTime());
+            dbManager.AddProduct(productModel);
+        }
     }
 
     void setUpButtons() {
